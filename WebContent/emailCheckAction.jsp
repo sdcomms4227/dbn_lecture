@@ -23,7 +23,7 @@
 		return;
 	}
 	String userEmail = userDAO.getUserEmail(userID);
-	boolean isRight = (new SHA256().getSHA256(userEmail).equals(code)) ? true : false;
+	boolean isRight = (SHA256.getSHA256(userEmail).equals(code)) ? true : false;
 	if(isRight){
 		userDAO.setUserEmailChecked(userID);
 		PrintWriter script = response.getWriter();
